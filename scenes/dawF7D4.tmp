@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://csgocfb31og7r"]
+
+[ext_resource type="Script" path="res://scripts/daw-entity.gd" id="1_kx2yo"]
+[ext_resource type="Texture2D" uid="uid://crmgxs6knb1wv" path="res://assets/img/daw-background.jpg" id="2_ifas0"]
+[ext_resource type="PackedScene" uid="uid://b0ce7myb1kxqn" path="res://scenes/button-sprite.tscn" id="3_ags60"]
+[ext_resource type="Texture2D" uid="uid://dn0rp0ijnjouv" path="res://assets/img/blue-button.jpg" id="3_d4or8"]
+[ext_resource type="Script" path="res://scripts/manage_button_group.gd" id="3_det1f"]
+[ext_resource type="Script" path="res://scripts/simple_theme_provider.gd" id="4_vqc6k"]
+[ext_resource type="Texture2D" uid="uid://dh666msyqgm57" path="res://assets/img/red-button.jpg" id="6_r7soh"]
+[ext_resource type="Texture2D" uid="uid://b28w2rrm8irrn" path="res://assets/img/dark-blue-button.jpg" id="7_m38pc"]
+[ext_resource type="Texture2D" uid="uid://da15t1xqghetc" path="res://assets/img/orange-button.jpg" id="8_lhuju"]
+[ext_resource type="Script" path="res://scripts/color_provider.gd" id="9_c7lam"]
+
+[node name="Daw" type="Node2D"]
+script = ExtResource("1_kx2yo")
+
+[node name="Workspace" type="Sprite2D" parent="."]
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("2_ifas0")
+
+[node name="PrototypeButtonGroup02" type="Node2D" parent="." node_paths=PackedStringArray("worskpace", "button_to_spawn")]
+script = ExtResource("3_det1f")
+worskpace = NodePath("../Workspace")
+button_to_spawn = NodePath("Button-sprite")
+
+[node name="Button-sprite" parent="PrototypeButtonGroup02" node_paths=PackedStringArray("color_provider") instance=ExtResource("3_ags60")]
+visible = false
+color_provider = NodePath("../../ColorProvider")
+
+[node name="PrototypeButtonGroup01" type="Node2D" parent="."]
+visible = false
+
+[node name="Button-01" parent="PrototypeButtonGroup01" node_paths=PackedStringArray("color_provider") instance=ExtResource("3_ags60")]
+position = Vector2(-243, -1)
+color_provider = NodePath("../../ColorProvider")
+
+[node name="Button-02" parent="PrototypeButtonGroup01" node_paths=PackedStringArray("color_provider") instance=ExtResource("3_ags60")]
+position = Vector2(-91, -1)
+color_provider = NodePath("../../ColorProvider")
+
+[node name="Button-03" parent="PrototypeButtonGroup01" node_paths=PackedStringArray("color_provider") instance=ExtResource("3_ags60")]
+position = Vector2(93, -1)
+color_provider = NodePath("../../ColorProvider")
+
+[node name="Button-04" parent="PrototypeButtonGroup01" node_paths=PackedStringArray("color_provider") instance=ExtResource("3_ags60")]
+position = Vector2(237, -1)
+color_provider = NodePath("../../ColorProvider")
+
+[node name="TextureProvider" type="Node2D" parent="."]
+script = ExtResource("4_vqc6k")
+primary = ExtResource("3_d4or8")
+secondary = ExtResource("6_r7soh")
+primary_2 = ExtResource("7_m38pc")
+secondary_2 = ExtResource("8_lhuju")
+
+[node name="ColorProvider" type="Node2D" parent="."]
+script = ExtResource("9_c7lam")
+primary = Color(0, 0.488269, 0.858319, 1)
+primary_2 = Color(0, 0.293008, 0.528311, 1)
+secondary = Color(0.999987, 0.23595, 0.417202, 1)
+secondary_2 = Color(0.516583, 0, 0.172883, 1)
