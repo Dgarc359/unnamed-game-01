@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://2vd2hcs5lc00"]
+[gd_scene load_steps=6 format=3 uid="uid://dje4fl4gb5lbk"]
+
+[ext_resource type="PackedScene" uid="uid://dawg6tnr71f86" path="res://UI/skill_check_ui.tscn" id="1_dit87"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4db6w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nhlug"]
+
+[sub_resource type="Animation" id="Animation_pjul2"]
+resource_name = "Spin"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ow8f3"]
+_data = {
+"Spin": SubResource("Animation_pjul2")
+}
 
 [node name="ThrowShuriken" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 5, -10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_4db6w")
+
+[node name="Shuriken" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -4.37114e-09, -0.5, 0, 0.1, -2.18557e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nhlug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shuriken"]
+libraries = {
+"": SubResource("AnimationLibrary_ow8f3")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SkillCheckUi" parent="CanvasLayer" instance=ExtResource("1_dit87")]
