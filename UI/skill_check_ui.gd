@@ -8,7 +8,7 @@ var is_active: bool = true
 @onready var green_zone = $MeterBackground/GreenZone
 @onready var yellow_zone = $MeterBackground/YellowZone
 @onready var red_zone = $MeterBackground/RedZone
-
+const FLY_SHURIKEN_LEVEL_SECTION = preload("res://scenes/fly_shuriken_level_section.tscn")
 func _process(delta):
 	if is_active:
 		move_marker(delta)
@@ -37,3 +37,5 @@ func evaluate_result():
 		print("Good! Yellow Zone: Average Speed and Stability!")
 	else:
 		print("Poor! Red Zone: Slow and Unstable!")
+	
+	get_tree().change_scene_to_packed(FLY_SHURIKEN_LEVEL_SECTION)
