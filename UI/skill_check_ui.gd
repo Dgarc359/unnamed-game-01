@@ -4,7 +4,7 @@ extends Control
 var moving_right: bool = true
 var is_active: bool = true
 
-@onready var marker = $MeterBackground/Marker
+@onready var marker: Marker = $MeterBackground/Marker
 @onready var green_zone = $MeterBackground/GreenZone
 @onready var yellow_zone = $MeterBackground/YellowZone
 @onready var red_zone = $MeterBackground/RedZone
@@ -27,6 +27,7 @@ func move_marker(delta):
 func _input(event):
 	if is_active and event.is_action_pressed("ui_accept"):  # Spacebar/Enter by default
 		is_active = false
+		marker.apply_glow("blue")
 		evaluate_result()
 
 func evaluate_result():
@@ -38,4 +39,5 @@ func evaluate_result():
 	else:
 		print("Poor! Red Zone: Slow and Unstable!")
 	
+	await get_tree().create_timer(3).timeout  # Wait 3 seconds
 	get_tree().change_scene_to_packed(FLY_SHURIKEN_LEVEL_SECTION)

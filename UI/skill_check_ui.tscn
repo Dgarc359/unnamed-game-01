@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dawg6tnr71f86"]
+[gd_scene load_steps=3 format=3 uid="uid://dawg6tnr71f86"]
 
 [ext_resource type="Script" path="res://UI/skill_check_ui.gd" id="1_n8gcf"]
+[ext_resource type="Script" path="res://UI/marker.gd" id="3_yokg2"]
 
 [node name="SkillCheckUi" type="Control"]
 layout_mode = 3
@@ -52,3 +53,7 @@ custom_minimum_size = Vector2(10, 50)
 layout_mode = 0
 offset_left = -10.0
 offset_bottom = 50.0
+script = ExtResource("3_yokg2")
+
+[node name="PointLight2D" type="PointLight2D" parent="MeterBackground/Marker"]
+energy = 3.0
