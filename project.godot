@@ -10,8 +10,7 @@ config_version=5
 
 [application]
 
-config/name="roguelike-daw-01"
-run/main_scene="res://scenes/game_orchestrator.tscn"
+config/name="piratesoftware-gamejam-16-entry"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
