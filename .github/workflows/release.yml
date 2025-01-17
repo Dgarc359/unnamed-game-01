@@ -15,7 +15,7 @@ on:
 
 env:
   GODOT_VERSION: 4.3
-  EXPORT_NAME: xephyrhills/metro-nooooo
+  EXPORT_NAME: xephyrhills/shuriken-simulator
   PROJECT_PATH: ./
 
 jobs:
