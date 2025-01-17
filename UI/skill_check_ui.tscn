@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://dawg6tnr71f86"]
+
+[ext_resource type="Script" path="res://UI/skill_check_ui.gd" id="1_n8gcf"]
+
+[node name="SkillCheckUi" type="Control"]
+layout_mode = 3
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n8gcf")
+
+[node name="MeterBackground" type="TextureRect" parent="."]
+self_modulate = Color(0.310617, 0.310617, 0.310617, 1)
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="RedZone" type="ColorRect" parent="MeterBackground"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 50.0
+color = Color(1, 0, 0, 1)
+
+[node name="YellowZone" type="ColorRect" parent="MeterBackground"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 0
+offset_left = 75.0
+offset_right = 325.0
+offset_bottom = 50.0
+color = Color(1, 1, 0, 1)
+
+[node name="GreenZone" type="ColorRect" parent="MeterBackground"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
+offset_left = 150.0
+offset_right = 250.0
+offset_bottom = 50.0
+color = Color(0, 1, 0, 1)
+
+[node name="Marker" type="ColorRect" parent="MeterBackground"]
+custom_minimum_size = Vector2(10, 50)
+layout_mode = 0
+offset_left = -10.0
+offset_bottom = 50.0
