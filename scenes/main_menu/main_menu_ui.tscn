@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://vrimophimd6a"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/play_button.gd" id="1_imwi6"]
+
+[node name="MainMenuUi" type="Node2D"]
+
+[node name="PLAY" type="Button" parent="."]
+offset_left = 388.0
+offset_top = 127.0
+offset_right = 686.0
+offset_bottom = 260.0
+size_flags_horizontal = 4
+text = "PLAY"
+script = ExtResource("1_imwi6")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 388.0
+offset_top = 355.0
+offset_right = 686.0
+offset_bottom = 488.0
+size_flags_horizontal = 4
+text = "OPTIONS"
+
+[connection signal="pressed" from="PLAY" to="PLAY" method="_on_pressed"]

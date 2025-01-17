@@ -22,5 +22,5 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#if not Input.is_action_pressed("tilt_up") or not Input.is_action_pressed("tilt_down"):
-		#rotation.x = lerp(rotation.x, 0.0, 0.01)
+		#rotation.x = lerp(rtation.x, 0.0, 0.01)
 	pass
