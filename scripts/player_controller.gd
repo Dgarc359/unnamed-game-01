@@ -4,10 +4,9 @@ extends CharacterBody3D
 const SPEED = 5.0
 const FRICTION = SPEED / 4
 const JUMP_VELOCITY = 4.5
-#@onready var camera: Node3D = $CameraOrigin
+@onready var camera: CameraOrigin = $CameraOrigin
 @export var model: Node3D
 @export var mouse_sensivity = 0.02
-@onready var camera: Node3D = $"../CameraOrigin"
 
 
 func _ready():
@@ -32,12 +31,15 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("tilt_left", "tilt_right", "tilt_up", "tilt_down")
 	var direction := (transform.basis * Vector3(-input_dir.x, 0, input_dir.y)).normalized()
-	print(direction)
+	
+	velocity.x += - camera.get_camera_direction().x
+	velocity.z += - camera.get_camera_direction().z
+	
 	if direction:
 		velocity.x += direction.x * SPEED
 		velocity.z += direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, FRICTION)
-		velocity.z = move_toward(velocity.z, 0, FRICTION)
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, FRICTION)
+		#velocity.z = move_toward(velocity.z, 0, FRICTION)
 
 	move_and_slide()
