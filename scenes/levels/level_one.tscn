@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://x3j7ecqcy4hp"]
 
-[ext_resource type="PackedScene" uid="uid://drwp7jho5lhw5" path="res://scenes/levels/level-one.blend" id="1_pvf82"]
+[ext_resource type="PackedScene" uid="uid://obv2j6wtdc6x" path="res://scenes/levels/shuriken-simulator-level-one.glb" id="1_m0kx3"]
 
 [node name="LevelOne" type="Node3D"]
 
-[node name="level-one" parent="." instance=ExtResource("1_pvf82")]
+[node name="shuriken-simulator-level-one" parent="." instance=ExtResource("1_m0kx3")]
