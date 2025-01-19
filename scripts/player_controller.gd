@@ -19,10 +19,25 @@ func collisioned_movement(delta: float):
 	velocity.z = move_toward(velocity.z, 0, FRICTION)
 	pass
 
-func collided():
+func collided(bounce_factor: int):
 	# TODO: get collision vector, then find an angle to put another big movement vector towards
 	# To simulate the shuriken deflecting off
-	collisioned = true
+	#collisioned = true
+	
+	velocity.x += sin(velocity.x) * bounce_factor
+	##velocity.y += sin(velocity.y) * bounce_factor
+	velocity.z += - (sin(velocity.z) * bounce_factor)
+	
+	#velocity.x += cos(velocity.x) * bounce_factor
+	#velocity.y += sin(velocity.y) * bounce_factor
+	#velocity.z += cos(velocity.z) * bounce_factor
+	
+	
+	
+	#velocity.x += tan(velocity.x) * bounce_factor
+	#velocity.y += sin(velocity.y) * bounce_factor
+	#velocity.z += tan(velocity.z) * bounce_factor
+	
 	pass
 
 func uncollisioned_movement():

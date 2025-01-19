@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckngwrwgxjoxc"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_24ye7"]
-[ext_resource type="PackedScene" uid="uid://bxqiyv3m81d2l" path="res://assets/3d/shuriken-01.glb" id="1_uidrr"]
-[ext_resource type="Script" path="res://assets/3d/shuriken_01.gd" id="3_3wshu"]
+[ext_resource type="PackedScene" uid="uid://bpjgub4ax7356" path="res://assets/3d/shuriken/shuriken-02.glb" id="2_17hq6"]
+[ext_resource type="Script" path="res://assets/3d/shuriken/shuriken_01.gd" id="3_3wshu"]
 [ext_resource type="Script" path="res://scripts/camera_origin.gd" id="4_lmdqa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l1cco"]
@@ -17,7 +17,7 @@ script = ExtResource("1_24ye7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00125122, 0)
 shape = SubResource("BoxShape3D_l1cco")
 
-[node name="shuriken-01" parent="CharacterBody3D" instance=ExtResource("1_uidrr")]
+[node name="shuriken-02" parent="CharacterBody3D" instance=ExtResource("2_17hq6")]
 script = ExtResource("3_3wshu")
 
 [node name="CameraOrigin" type="Node3D" parent="CharacterBody3D"]
