@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://fbauxjfe8lf7"]
+[gd_scene load_steps=3 format=3 uid="uid://fbauxjfe8lf7"]
 
 [ext_resource type="PackedScene" uid="uid://ckngwrwgxjoxc" path="res://scenes/player.tscn" id="1_w78sf"]
-[ext_resource type="PackedScene" uid="uid://x3j7ecqcy4hp" path="res://scenes/levels/level_one.tscn" id="2_otn18"]
-[ext_resource type="PackedScene" uid="uid://ccmik0cjl8urs" path="res://assets/3d/collidable-cubes/collidable_cube.tscn" id="3_0tqtm"]
+[ext_resource type="PackedScene" uid="uid://x3j7ecqcy4hp" path="res://scenes/levels/level_one/level_one.tscn" id="2_otn18"]
 
 [node name="FlyShurikenLevelSection" type="Node3D"]
 
@@ -13,9 +12,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 6)
 transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.18557e-08, 0.866025, 0.5, 1, 0, -4.37114e-08, -35, 21, 0)
 
 [node name="LevelOne" parent="." instance=ExtResource("2_otn18")]
-
-[node name="CollidableCube" parent="." groups=["breaks-flight"] instance=ExtResource("3_0tqtm")]
-transform = Transform3D(10.705, 0, 0, 0, 10.705, 0, 0, 0, 10.705, 45.6251, 10.6238, -16)
-
-[node name="Floor" parent="." instance=ExtResource("3_0tqtm")]
-transform = Transform3D(38.1332, 0, 0, 0, 1, 0, 0, 0, 48.9874, 0, 0, 0)

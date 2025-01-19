@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccmik0cjl8urs"]
 
 [ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="1_6qt6x"]
-[ext_resource type="Script" path="res://assets/3d/collidable-cubes/collidable_cube.gd" id="1_bbnru"]
+[ext_resource type="Script" path="res://scripts/collidable_cube.gd" id="1_bbnru"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8q5v"]
 size = Vector3(2.05655, 2.05653, 2.09668)

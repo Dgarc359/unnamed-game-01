@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://x3j7ecqcy4hp"]
+
+[ext_resource type="PackedScene" uid="uid://obv2j6wtdc6x" path="res://scenes/levels/level_one/shuriken-simulator-level-one.glb" id="1_m0kx3"]
+[ext_resource type="PackedScene" uid="uid://ccmik0cjl8urs" path="res://scenes/physical_objects/collidable_cube.tscn" id="2_s7w21"]
+[ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="3_8v1yl"]
+[ext_resource type="PackedScene" uid="uid://bfjacl6cdnosm" path="res://scenes/physical_objects/blender_cube.tscn" id="4_6aolu"]
+[ext_resource type="Script" path="res://scripts/collidable_cube.gd" id="5_u6nlt"]
+
+[node name="LevelOne" type="Node3D"]
+
+[node name="shuriken-simulator-level-one" parent="." instance=ExtResource("1_m0kx3")]
+
+[node name="CollidableCube" parent="." groups=["breaks-flight"] instance=ExtResource("2_s7w21")]
+transform = Transform3D(10.705, 0, 0, 0, 10.705, 0, 0, 0, 10.705, 45.6251, 10.6238, -16)
+
+[node name="Floor" parent="." instance=ExtResource("2_s7w21")]
+transform = Transform3D(38.1332, 0, 0, 0, 1, 0, 0, 0, 48.9874, 0, 0, 0)
+
+[node name="cube" parent="." instance=ExtResource("3_8v1yl")]
+transform = Transform3D(32.5315, 0, 0, 0, 0.576886, 0, 0, 0, 21.3241, 9.8521, 0.267147, 106.123)
+
+[node name="cube2" parent="." instance=ExtResource("4_6aolu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6202, 0, -44.3281)
+script = ExtResource("5_u6nlt")

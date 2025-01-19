@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://obv2j6wtdc6x"
-path="res://.godot/imported/shuriken-simulator-level-one.glb-7eef380067c7a38c21305b4f1e067840.scn"
+uid="uid://cabvlewmsk1xs"
+path="res://.godot/imported/shuriken-03b.glb-a9fd0f83247fd33a584e16b8082d18ca.scn"
 
 [deps]
 
-source_file="res://scenes/levels/shuriken-simulator-level-one.glb"
-dest_files=["res://.godot/imported/shuriken-simulator-level-one.glb-7eef380067c7a38c21305b4f1e067840.scn"]
+source_file="res://assets/3d/shuriken/shuriken-03b.glb"
+dest_files=["res://.godot/imported/shuriken-03b.glb-a9fd0f83247fd33a584e16b8082d18ca.scn"]
 
 [params]
 

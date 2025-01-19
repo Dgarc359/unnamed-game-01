@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://x3j7ecqcy4hp"]
-
-[ext_resource type="PackedScene" uid="uid://obv2j6wtdc6x" path="res://scenes/levels/shuriken-simulator-level-one.glb" id="1_m0kx3"]
-
-[node name="LevelOne" type="Node3D"]
-
-[node name="shuriken-simulator-level-one" parent="." instance=ExtResource("1_m0kx3")]

@@ -5,9 +5,11 @@ class_name Shuriken
 const SPEED = 5.0
 const FRICTION = SPEED / 4
 const JUMP_VELOCITY = 4.5
-@onready var camera: CameraOrigin = $CameraOrigin
-@export var model: Node3D
+
+@export var collision_sound: AudioStreamPlayer
 @export var mouse_sensivity = 0.1
+
+@onready var camera: CameraOrigin = $CameraOrigin
 
 var collisioned = false
 
@@ -22,21 +24,12 @@ func collisioned_movement(delta: float):
 func collided(bounce_factor: int):
 	# TODO: get collision vector, then find an angle to put another big movement vector towards
 	# To simulate the shuriken deflecting off
+	collision_sound.play()
 	#collisioned = true
 	
 	velocity.x += sin(velocity.x) * bounce_factor
 	##velocity.y += sin(velocity.y) * bounce_factor
 	velocity.z += - (sin(velocity.z) * bounce_factor)
-	
-	#velocity.x += cos(velocity.x) * bounce_factor
-	#velocity.y += sin(velocity.y) * bounce_factor
-	#velocity.z += cos(velocity.z) * bounce_factor
-	
-	
-	
-	#velocity.x += tan(velocity.x) * bounce_factor
-	#velocity.y += sin(velocity.y) * bounce_factor
-	#velocity.z += tan(velocity.z) * bounce_factor
 	
 	pass
 
@@ -44,14 +37,16 @@ func uncollisioned_movement():
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("tilt_left", "tilt_right", "tilt_up", "tilt_down")
-	var direction := (transform.basis * Vector3(-input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (transform.basis * Vector3(-input_dir.x, input_dir.y, 0)).normalized()
 	
-	velocity.x += - camera.get_camera_direction().x
-	velocity.z += - camera.get_camera_direction().z
+	#print('cam dir', camera.get_camera_direction())
+	velocity.x -= camera.get_camera_direction().x
+	velocity.z -= camera.get_camera_direction().z
 	
+	print('direction', direction)
 	if direction:
-		velocity.x += direction.x * SPEED
-		velocity.z += direction.z * SPEED
+		velocity.x += direction.x
+		velocity.y += direction.y
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -67,6 +62,8 @@ func _input(event):
 	pass
 
 func _physics_process(delta: float) -> void:
+	print('velocity', velocity)
+	
 	if not collisioned:
 		uncollisioned_movement()
 	else:

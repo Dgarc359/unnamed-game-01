@@ -1,23 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckngwrwgxjoxc"]
+[gd_scene load_steps=7 format=3 uid="uid://ckngwrwgxjoxc"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_24ye7"]
-[ext_resource type="PackedScene" uid="uid://bpjgub4ax7356" path="res://assets/3d/shuriken/shuriken-02.glb" id="2_17hq6"]
+[ext_resource type="PackedScene" uid="uid://cabvlewmsk1xs" path="res://assets/3d/shuriken/shuriken-03b.glb" id="2_3ey8l"]
 [ext_resource type="Script" path="res://assets/3d/shuriken/shuriken_01.gd" id="3_3wshu"]
 [ext_resource type="Script" path="res://scripts/camera_origin.gd" id="4_lmdqa"]
+[ext_resource type="AudioStream" uid="uid://dprq22cckmrut" path="res://assets/sound/impactMining_004.ogg" id="5_qc5dj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l1cco"]
 size = Vector3(2.01855, 0.199524, 2.00977)
 
 [node name="Player" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["player"]]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("collision_sound") groups=["player"]]
 script = ExtResource("1_24ye7")
+collision_sound = NodePath("../ImpactMining004")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00125122, 0)
 shape = SubResource("BoxShape3D_l1cco")
 
-[node name="shuriken-02" parent="CharacterBody3D" instance=ExtResource("2_17hq6")]
+[node name="shuriken-03b" parent="CharacterBody3D" instance=ExtResource("2_3ey8l")]
+transform = Transform3D(5.01573, 0, 0, 0, 1, 0, 0, 0, 5.01573, 0, 0, 0)
 script = ExtResource("3_3wshu")
 
 [node name="CameraOrigin" type="Node3D" parent="CharacterBody3D"]
@@ -25,3 +28,6 @@ script = ExtResource("4_lmdqa")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraOrigin"]
 transform = Transform3D(-0.996195, 0.0352241, -0.0797205, 0, 0.914692, 0.404152, 0.0871556, 0.402614, -0.911211, 0, 1.72159, -5.7294)
+
+[node name="ImpactMining004" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qc5dj")
