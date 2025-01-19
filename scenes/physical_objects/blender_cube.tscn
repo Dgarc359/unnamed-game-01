@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfjacl6cdnosm"]
+
+[ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="1_ikn2x"]
+[ext_resource type="Script" path="res://scripts/blender_cube.gd" id="2_kxkih"]
+
+[node name="BlenderCube" instance=ExtResource("1_ikn2x")]
+script = ExtResource("2_kxkih")

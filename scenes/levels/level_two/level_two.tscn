@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwgi4x4mexm11"]
+
+[ext_resource type="PackedScene" uid="uid://ccmik0cjl8urs" path="res://scenes/physical_objects/collidable_cube.tscn" id="1_tgw83"]
+[ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="2_5ji2a"]
+[ext_resource type="Script" path="res://scenes/levels/level_two/rigid_body_3d.gd" id="2_vnoie"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3im7r"]
+size = Vector3(2.27469, 2.24298, 2.24279)
+
+[node name="LevelTwo" type="Node3D"]
+transform = Transform3D(0.974965, 0, 0, 0, 0.974965, 0, 0, 0, 0.974965, 0, 0, 0)
+
+[node name="CollidableCube" parent="." instance=ExtResource("1_tgw83")]
+transform = Transform3D(23.3702, 0, 0, 0, 0.274584, 0, 0, 0, 24.5213, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.916146, 0.400845, 0, -0.400845, 0.916146, 0, 14.5956, 31.5261)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0727388, -0.542148, 0.837129, 0.0469309, 0.840283, 0.540113, -0.996246, 0, 0.0865646, 29.0534, 12.6234, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+script = ExtResource("2_vnoie")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000139236, 0.0103502, -0.015813)
+shape = SubResource("BoxShape3D_3im7r")
+
+[node name="cube" parent="RigidBody3D" instance=ExtResource("2_5ji2a")]

@@ -2,5 +2,5 @@ extends Node3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotate_y(6 * delta)
+	rotate_y(10 * delta)
 	pass
