@@ -17,7 +17,7 @@ func _on_collidable_area_body_entered(body: Node3D) -> void:
 	
 	if groups.has("player") and body is Shuriken:
 		#print('found shuriken')
-		body.collided()
+		body.collided(250)
 	
 	pass
 	

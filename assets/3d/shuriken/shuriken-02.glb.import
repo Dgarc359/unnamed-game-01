@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxqiyv3m81d2l"
-path="res://.godot/imported/shuriken-01.glb-afdcdce0009ee18734b09d9227f214e8.scn"
+uid="uid://bpjgub4ax7356"
+path="res://.godot/imported/shuriken-02.glb-44780d135e79ab2a2703be092507ac34.scn"
 
 [deps]
 
-source_file="res://assets/3d/shuriken-01.glb"
-dest_files=["res://.godot/imported/shuriken-01.glb-afdcdce0009ee18734b09d9227f214e8.scn"]
+source_file="res://assets/3d/shuriken/shuriken-02.glb"
+dest_files=["res://.godot/imported/shuriken-02.glb-44780d135e79ab2a2703be092507ac34.scn"]
 
 [params]
 
