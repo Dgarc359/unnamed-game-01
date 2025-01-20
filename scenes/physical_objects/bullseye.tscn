@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmvrkgufmhreh"]
+[gd_scene load_steps=6 format=3 uid="uid://bi1oeyglujlg3"]
 
 [ext_resource type="PackedScene" uid="uid://7iir15opwe1l" path="res://assets/3d/bullseye/bullseye.glb" id="1_2bu27"]
 [ext_resource type="Script" path="res://scripts/bullseye.gd" id="1_m1l55"]

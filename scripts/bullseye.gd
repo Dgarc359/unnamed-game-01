@@ -20,7 +20,7 @@ func handle_area_entered(body: Node3D, area_entered: String) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(first_impact)
+	#print(first_impact)
 	pass
 
 

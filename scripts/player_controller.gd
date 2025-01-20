@@ -6,6 +6,8 @@ const SPEED = 5.0
 const FRICTION = SPEED / 4
 const JUMP_VELOCITY = 4.5
 
+var velocity_factor: float = 1
+const FLY_SHURIKEN_RESOURCE = preload("res://assets/resources/fly_shuriken.tres")
 @export var collision_sound: AudioStreamPlayer
 @export var mouse_sensivity = 0.1
 
@@ -24,6 +26,11 @@ var movement_map = {
 	"collided": collided,
 	"frozen": frozen_movement_state
 }
+
+#func new(_velocity_factor):
+	#ResourceLoader.
+	#
+	#pass
 
 func set_movement_state(_state: String):
 	if _state not in valid_movement_states:
@@ -63,16 +70,17 @@ func uncollisioned_movement(delta:float):
 	var input_dir := Input.get_vector("tilt_left", "tilt_right", "tilt_up", "tilt_down")
 	var direction := (transform.basis * Vector3(-input_dir.x, input_dir.y, 0)).normalized()
 	
-	velocity.x += (- camera.get_camera_direction().x) / 4
-	velocity.z += (- camera.get_camera_direction().z) / 4
+	velocity.x += (- camera.get_camera_direction().x) * velocity_factor
+	velocity.z += (- camera.get_camera_direction().z) * velocity_factor
 	
-	#print('direction', direction)
 	if direction:
 		velocity.x += direction.x
 		velocity.y += direction.y
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#print("shuriken speed", FLY_SHURIKEN_RESOURCE.get_velocity())
+	velocity_factor = FLY_SHURIKEN_RESOURCE.get_velocity()
 	pass
 
 func _input(event):
