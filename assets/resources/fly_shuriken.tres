@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_j23f4")
-velocity_factor = 0.25
+velocity_factor = 1.5
