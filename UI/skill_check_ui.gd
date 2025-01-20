@@ -31,15 +31,16 @@ func _input(event):
 		evaluate_result()
 
 func evaluate_result():
+	FLY_SHURIKEN_RESOURCE.reset_velocity()
 	var marker_x = marker.position.x
 	if green_zone.get_rect().has_point(Vector2(marker_x, 0)):
 		print("Perfect! Green Zone: Max Speed and Stability!")
+		FLY_SHURIKEN_RESOURCE.set_velocity(1.5)
 	elif yellow_zone.get_rect().has_point(Vector2(marker_x, 0)):
 		print("Good! Yellow Zone: Average Speed and Stability!")
+		FLY_SHURIKEN_RESOURCE.set_velocity(1)
 	else:
 		print("Poor! Red Zone: Slow and Unstable!")
-	
-	FLY_SHURIKEN_RESOURCE.reset_velocity()
-	print("previous velocity", FLY_SHURIKEN_RESOURCE.get_velocity())
-	FLY_SHURIKEN_RESOURCE.set_velocity(0.25)
+		FLY_SHURIKEN_RESOURCE.set_velocity(0.5)
+
 	get_tree().change_scene_to_packed(FLY_SHURIKEN_LEVEL_SECTION)
