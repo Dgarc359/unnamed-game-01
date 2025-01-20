@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://fbauxjfe8lf7"]
 
 [ext_resource type="PackedScene" uid="uid://ckngwrwgxjoxc" path="res://scenes/player.tscn" id="1_w78sf"]
-[ext_resource type="PackedScene" uid="uid://x3j7ecqcy4hp" path="res://scenes/levels/level_one/level_one.tscn" id="2_otn18"]
+[ext_resource type="PackedScene" uid="uid://cgbfvguikgs88" path="res://scenes/levels/tutorial/tutorial_level.tscn" id="2_v4tf4"]
 
 [node name="FlyShurikenLevelSection" type="Node3D"]
 
@@ -11,4 +11,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 6)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.18557e-08, 0.866025, 0.5, 1, 0, -4.37114e-08, -35, 21, 0)
 
-[node name="LevelOne" parent="." instance=ExtResource("2_otn18")]
+[node name="TutorialLevel" parent="." instance=ExtResource("2_v4tf4")]
