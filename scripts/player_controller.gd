@@ -1,7 +1,6 @@
 extends CharacterBody3D
 class_name Shuriken
 
-
 const SPEED = 5.0
 const FRICTION = SPEED / 4
 const JUMP_VELOCITY = 4.5
@@ -10,8 +9,10 @@ var velocity_factor: float = 1
 const FLY_SHURIKEN_RESOURCE = preload("res://assets/resources/fly_shuriken.tres")
 @export var collision_sound: AudioStreamPlayer
 @export var mouse_sensivity = 0.1
+@export var shuriken_model: ShurikenModel
 
 @onready var camera: CameraOrigin = $CameraOrigin
+
 
 var collisioned = false
 
@@ -39,6 +40,7 @@ func set_movement_state(_state: String):
 
 func frozen_movement_state(delta: float):
 	velocity = Vector3(0, 0, 0)
+	shuriken_model.sets_rotation(0)
 	pass
 
 func collisioned_movement(delta: float):
@@ -61,10 +63,10 @@ func collided(bounce_factor: int, collision_callback: Callable = func(n: Node3D)
 	if collision_callback:
 		collision_callback.call(self)
 		pass
-	
+
 	pass
 
-func uncollisioned_movement(delta:float):
+func uncollisioned_movement(delta: float):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("tilt_left", "tilt_right", "tilt_up", "tilt_down")
@@ -84,6 +86,7 @@ func _ready():
 	pass
 
 func _input(event):
+	
 	if event is InputEventMouseMotion:
 		## TODO: Mouse rotation is affected by current velocity
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensivity))
@@ -95,5 +98,5 @@ func _physics_process(delta: float) -> void:
 	#print('velocity', velocity)
 	
 	movement_map[movement_state].call(delta)
-
+	
 	move_and_slide()
