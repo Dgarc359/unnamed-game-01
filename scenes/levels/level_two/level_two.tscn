@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwgi4x4mexm11"]
+[gd_scene load_steps=6 format=3 uid="uid://cwgi4x4mexm11"]
 
 [ext_resource type="PackedScene" uid="uid://ccmik0cjl8urs" path="res://scenes/physical_objects/collidable_cube.tscn" id="1_tgw83"]
 [ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="2_5ji2a"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3im7r"]
 size = Vector3(2.27469, 2.24298, 2.24279)
+
+[sub_resource type="Environment" id="Environment_rji55"]
 
 [node name="LevelTwo" type="Node3D"]
 transform = Transform3D(0.974965, 0, 0, 0, 0.974965, 0, 0, 0, 0.974965, 0, 0, 0)
@@ -28,3 +30,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000139236, 0.0103502, -0.01
 shape = SubResource("BoxShape3D_3im7r")
 
 [node name="cube" parent="RigidBody3D" instance=ExtResource("2_5ji2a")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rji55")
