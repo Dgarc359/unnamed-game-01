@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgbfvguikgs88"]
+
+[ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="1_rsoes"]
+[ext_resource type="PackedScene" uid="uid://bmvrkgufmhreh" path="res://scenes/physical_objects/bullseye.tscn" id="2_d463q"]
+
+[node name="TutorialLevel" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_rsoes")]
+transform = Transform3D(75.0054, 0, 0, 0, 0.277808, 0, 0, 0, 216.838, 0, 0, 0)
+
+[node name="Bullseye" parent="." instance=ExtResource("2_d463q")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 38.1324, 153.19)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.059991, 0.571945, -0.818095, 0.0418285, 0.820292, 0.570414, 0.997322, 0, -0.0731337, -165.871, 144.778, 0)

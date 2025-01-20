@@ -39,9 +39,8 @@ func uncollisioned_movement():
 	var input_dir := Input.get_vector("tilt_left", "tilt_right", "tilt_up", "tilt_down")
 	var direction := (transform.basis * Vector3(-input_dir.x, input_dir.y, 0)).normalized()
 	
-	#print('cam dir', camera.get_camera_direction())
-	velocity.x -= camera.get_camera_direction().x
-	velocity.z -= camera.get_camera_direction().z
+	velocity.x += - camera.get_camera_direction().x
+	velocity.z += - camera.get_camera_direction().z
 	
 	print('direction', direction)
 	if direction:
