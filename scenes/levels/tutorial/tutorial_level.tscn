@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgbfvguikgs88"]
+[gd_scene load_steps=4 format=3 uid="uid://cgbfvguikgs88"]
 
 [ext_resource type="PackedScene" uid="uid://cqhnwqs78uf31" path="res://assets/3d/cube.glb" id="1_rsoes"]
 [ext_resource type="PackedScene" uid="uid://bmvrkgufmhreh" path="res://scenes/physical_objects/bullseye.tscn" id="2_d463q"]
+
+[sub_resource type="Environment" id="Environment_lsvdn"]
 
 [node name="TutorialLevel" type="Node3D"]
 
@@ -13,3 +15,6 @@ transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.371
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.059991, 0.571945, -0.818095, 0.0418285, 0.820292, 0.570414, 0.997322, 0, -0.0731337, -165.871, 144.778, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lsvdn")
