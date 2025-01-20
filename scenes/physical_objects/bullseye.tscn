@@ -1,7 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmvrkgufmhreh"]
+[gd_scene load_steps=6 format=3 uid="uid://bmvrkgufmhreh"]
 
 [ext_resource type="PackedScene" uid="uid://7iir15opwe1l" path="res://assets/3d/bullseye/bullseye.glb" id="1_2bu27"]
+[ext_resource type="Script" path="res://scripts/bullseye.gd" id="1_m1l55"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i02bl"]
+height = 0.80705
+radius = 0.768046
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yolj3"]
+height = 0.551231
+radius = 1.77308
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5f12l"]
+height = 0.301
+radius = 3.26199
 
 [node name="Bullseye" type="Node3D"]
+script = ExtResource("1_m1l55")
 
 [node name="bullseye" parent="." instance=ExtResource("1_2bu27")]
+
+[node name="HighPointArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HighPointArea"]
+shape = SubResource("CylinderShape3D_i02bl")
+
+[node name="MediumPointArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MediumPointArea"]
+shape = SubResource("CylinderShape3D_yolj3")
+
+[node name="LowPointArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LowPointArea"]
+shape = SubResource("CylinderShape3D_5f12l")
+
+[connection signal="body_entered" from="HighPointArea" to="." method="_on_high_point_area_body_entered"]
+[connection signal="body_entered" from="MediumPointArea" to="." method="_on_medium_point_area_body_entered"]
+[connection signal="body_entered" from="LowPointArea" to="." method="_on_low_point_area_body_entered"]
