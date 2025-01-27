@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://mm3juufqfmrn"]
+
+[ext_resource type="Script" path="res://scenes/level_select/level_button.gd" id="1_tnlr8"]
+[ext_resource type="PackedScene" uid="uid://cgbfvguikgs88" path="res://scenes/levels/tutorial/tutorial_level.tscn" id="2_qs6e5"]
+[ext_resource type="PackedScene" uid="uid://fbauxjfe8lf7" path="res://scenes/fly_shuriken_level_section.tscn" id="3_hu3wp"]
+[ext_resource type="PackedScene" uid="uid://cwgi4x4mexm11" path="res://scenes/levels/level_two/level_two.tscn" id="4_hdf4d"]
+
+[node name="LevelSelect" type="Node2D"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = 140.0
+offset_right = 1101.0
+offset_bottom = 581.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Tutorial" type="Button" parent="GridContainer" node_paths=PackedStringArray("button")]
+layout_mode = 2
+text = "TUTORIAL"
+script = ExtResource("1_tnlr8")
+level_to_switch_to = ExtResource("2_qs6e5")
+button = NodePath(".")
+
+[node name="LevelOne" type="Button" parent="GridContainer" node_paths=PackedStringArray("button")]
+layout_mode = 2
+text = "One"
+script = ExtResource("1_tnlr8")
+level_to_switch_to = ExtResource("3_hu3wp")
+button = NodePath(".")
+
+[node name="LevelTwo" type="Button" parent="GridContainer" node_paths=PackedStringArray("button")]
+layout_mode = 2
+text = "Two"
+script = ExtResource("1_tnlr8")
+level_to_switch_to = ExtResource("4_hdf4d")
+button = NodePath(".")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fbauxjfe8lf7"]
 
 [ext_resource type="PackedScene" uid="uid://ckngwrwgxjoxc" path="res://scenes/player.tscn" id="1_w78sf"]
-[ext_resource type="PackedScene" uid="uid://x3j7ecqcy4hp" path="res://scenes/levels/level_one/level_one.tscn" id="2_eaf20"]
+[ext_resource type="PackedScene" uid="uid://cd0udd05d0wl" path="res://scenes/levels/level_one/level_one_blendered.tscn" id="2_ihes4"]
 
 [sub_resource type="Environment" id="Environment_u7ua4"]
 
@@ -13,7 +13,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 6)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-3.78552e-08, 0.5, -0.866025, 2.18557e-08, 0.866025, 0.5, 1, 0, -4.37114e-08, -35, 21, 0)
 
-[node name="LevelOne" parent="." instance=ExtResource("2_eaf20")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_u7ua4")
+
+[node name="level-one" parent="." instance=ExtResource("2_ihes4")]

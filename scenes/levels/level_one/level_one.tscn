@@ -10,6 +10,7 @@
 [node name="LevelOne" type="Node3D"]
 
 [node name="shuriken-simulator-level-one" parent="." instance=ExtResource("1_m0kx3")]
+visible = false
 
 [node name="CollidableCube" parent="." groups=["breaks-flight"] instance=ExtResource("2_s7w21")]
 transform = Transform3D(10.705, 0, 0, 0, 10.705, 0, 0, 0, 10.705, 45.6251, 10.6238, -16)

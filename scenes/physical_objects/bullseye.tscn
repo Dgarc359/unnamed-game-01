@@ -16,6 +16,7 @@ height = 0.301
 radius = 3.26199
 
 [node name="Bullseye" type="Node3D"]
+transform = Transform3D(13.45, 0, 0, 0, 1, 0, 0, 0, 13.45, 0, 0, 0)
 script = ExtResource("1_m1l55")
 
 [node name="bullseye" parent="." instance=ExtResource("1_2bu27")]
